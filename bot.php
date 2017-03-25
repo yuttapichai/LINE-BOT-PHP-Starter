@@ -17,13 +17,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$sendMsg = [];
 
-			if($event['message']['text'] == 'สวัสดี'){
-				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
-				$ran_msg =rand(0,2);
+			if($text == 'สวัสดี'){
+				// $msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
+				// $ran_msg =rand(0,2);
 				$messages = [
 				{
 					'type' => 'text',
-					'text' => $msg[$ran_msg]
+					// 'text' => $msg[$ran_msg]
+					'text' => $text
 				}
 				];
 			}
