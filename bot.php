@@ -46,9 +46,11 @@ if (!is_null($events['events'])) {
 				$qq = substr($text, -8);
 			$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
 			$messages = [
-				    "type"=> "image",
-					"originalContentUrl"=> $urlpic,
-					"previewImageUrl"=> $urlpic
+				 //    'type'=> 'image',
+					// 'originalContentUrl'=> $urlpic,
+					// 'previewImageUrl'=> $urlpic
+					'type' => 'text',
+					'text' => $qq
 			];
 			}
 
