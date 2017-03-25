@@ -33,6 +33,13 @@ if (!is_null($events['events'])) {
 					'text' => 'ผมชื่อมะพร้าวครับ'
 				];
 			}
+			if($text == 'ชอบกินอะไร'){
+				$messages = [
+					'type' => 'text',
+					// 'text' => $msg[$ran_msg]
+					'text' => 'ไข่ทอด อิอิ'
+				];
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
