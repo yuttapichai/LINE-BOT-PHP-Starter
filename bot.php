@@ -42,13 +42,13 @@ if (!is_null($events['events'])) {
 			}
 			if(strchr($text,'ภาพ')){
 				$sub = substr($text,3)
-				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $sub;
+				// $urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $sub;
 				$messages = [
 					    // "type"=> "image",
     					// "originalContentUrl"=> $urlpic,
     					// "previewImageUrl"=> $urlpic
 					'type' => 'text',
-					'text' => $sub
+					'text' => $text
 				];
 			}
 
