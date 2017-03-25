@@ -18,12 +18,12 @@ if (!is_null($events['events'])) {
 			$sendMsg = [];
 
 			if($text == 'สวัสดี'){
-				// $msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
-				// $ran_msg =rand(0,2);
+				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
+				$ran_msg =rand(0,2);
 				$messages = [
 					'type' => 'text',
 					// 'text' => $msg[$ran_msg]
-					'text' => $text
+					'text' => $msg[$ran_msg]
 				];
 			}
 
