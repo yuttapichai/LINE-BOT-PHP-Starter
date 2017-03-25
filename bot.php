@@ -15,7 +15,11 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			$sendMsg = [];
+			$messages = [
+					'type' => 'text',
+					// 'text' => $msg[$ran_msg]
+					'text' => 'ผมไม่เข้าใจ'
+			];
 
 			if($text == 'สวัสดี'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
@@ -40,6 +44,7 @@ if (!is_null($events['events'])) {
 					'text' => 'ไข่ทอด อิอิ'
 				];
 			}
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
