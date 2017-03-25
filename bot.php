@@ -15,6 +15,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$sub = substr($text,'@',true);
 			$messages = [
 					'type' => 'text',
 					'text' => 'ผมไม่เข้าใจ'
@@ -40,7 +41,6 @@ if (!is_null($events['events'])) {
 					'text' => 'ไข่ทอด อิอิ'
 				];
 			}
-			$sub = substr($text,'@',true);
 			if($sub == 'pic'){
 				$qq = substr($text, -8);
 			// $urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
