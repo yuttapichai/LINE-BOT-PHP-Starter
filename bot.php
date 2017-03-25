@@ -74,19 +74,10 @@ if (!is_null($events['events'])) {
 					'text' => 'เล่นถามแบบนี้ เขินสิครับ'
 				];
 			}
-			if($sub == 'cal'){
-				$qq = substr($text, -8);
-				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
-				$messages = [
-					    'type'=> 'image',
-						'originalContentUrl'=> $urlpic,
-						'previewImageUrl'=> $urlpic
-				];
-			}
 			if($text == 'น่ารัก'){
-			  "type": "sticker",
-			  "packageId": "2",
-			  "stickerId": "36"
+			  "type"=> "sticker",
+			  "packageId"=> "2",
+			  "stickerId"=>"36"
 			}
 
 
