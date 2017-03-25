@@ -74,6 +74,12 @@ if (!is_null($events['events'])) {
 					'text' => 'เล่นถามแบบนี้ เขินสิครับ'
 				];
 			}
+			if($text == 'จีบได้ไหม'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ถามแบบนี้ส่งเบอร์มาเลยดีกว่า ^^'
+				];
+			}
 			if($text == 'น่ารัก'){
 				$messages = [
 					  'type' => 'sticker',
