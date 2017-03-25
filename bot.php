@@ -113,15 +113,10 @@ if (!is_null($events['events'])) {
 			  	];
 			}
 			if($text == 'ฝันดี'){
-				$messages = [{
+				$messages = [
 					  'type' => 'sticker',
 					  'packageId'=> '2',
 					  'stickerId'=>'46'
-					},
-					{
-					'type' => 'text',
-					'text' => 'ฝันถึงมะพร้าวด้วยนะ อิอิ'
-					}
 			  	];
 			}
 
