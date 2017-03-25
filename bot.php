@@ -21,11 +21,9 @@ if (!is_null($events['events'])) {
 				// $msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
 				// $ran_msg =rand(0,2);
 				$messages = [
-				{
 					'type' => 'text',
 					// 'text' => $msg[$ran_msg]
 					'text' => $text
-				}
 				];
 			}
 
@@ -44,7 +42,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => $messages,
+				'messages' => [$messages],
 
 			];
 			$post = json_encode($data);
