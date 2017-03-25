@@ -17,7 +17,6 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$messages = [
 					'type' => 'text',
-					// 'text' => $msg[$ran_msg]
 					'text' => 'ผมไม่เข้าใจ'
 			];
 
@@ -26,21 +25,18 @@ if (!is_null($events['events'])) {
 				$ran_msg =rand(0,sizeof($msg)-1);
 				$messages = [
 					'type' => 'text',
-					// 'text' => $msg[$ran_msg]
 					'text' => $msg[$ran_msg]
 				];
 			}
 			if($text == 'ชื่อ' || $text == 'ชื่อไร' || $text == 'ชื่อไรคับ' || $text == 'ชื่อไรคะ' || $text == 'ชื่อไรหรอ' || $text == 'ชื่ออะไร'){
 				$messages = [
 					'type' => 'text',
-					// 'text' => $msg[$ran_msg]
 					'text' => 'ผมชื่อมะพร้าวครับ'
 				];
 			}
 			if($text == 'ชอบกินอะไร'){
 				$messages = [
 					'type' => 'text',
-					// 'text' => $msg[$ran_msg]
 					'text' => 'ไข่ทอด อิอิ'
 				];
 			}
@@ -48,9 +44,11 @@ if (!is_null($events['events'])) {
 				$sub = substr($text,3)
 				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $sub;
 				$messages = [
-					    "type"=> "image",
-    					"originalContentUrl"=> $urlpic,
-    					"previewImageUrl"=> $urlpic
+					    // "type"=> "image",
+    					// "originalContentUrl"=> $urlpic,
+    					// "previewImageUrl"=> $urlpic
+					'type' => 'text',
+					'text' => $sub
 				];
 			}
 
