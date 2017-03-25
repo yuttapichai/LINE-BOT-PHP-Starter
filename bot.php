@@ -44,6 +44,15 @@ if (!is_null($events['events'])) {
 					'text' => 'ไข่ทอด อิอิ'
 				];
 			}
+			if(strchr($text,'ภาพ')){
+				$sub = substr($text,3)
+				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $sub;
+				$messages = [
+					    "type"=> "image",
+    					"originalContentUrl"=> $urlpic,
+    					"previewImageUrl"=> $urlpic
+				];
+			}
 
 
 			// Make a POST Request to Messaging API to reply to sender
