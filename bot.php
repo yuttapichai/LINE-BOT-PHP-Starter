@@ -50,7 +50,12 @@ if (!is_null($events['events'])) {
 						'previewImageUrl'=> $urlpic
 				];
 			}
-
+			if($text == 'ทำไรอยู่' || $text == 'ทำไร' || $text == 'ทำอะไรอยู่' || $text == 'ทำไรอยู่เอ่ย'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ตอบคุณอยู่นี่ไง'
+				];
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
