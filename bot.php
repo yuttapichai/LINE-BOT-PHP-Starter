@@ -16,32 +16,11 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$bufferMessage = [];
-
-            $temp1 = '18';
-            $temp2 = '19';
-            $temp3 = '20';
-            $temp4 = '21';
-            $temp5 = '22';           
-            
-
-            $message1 = [
-                'type' => 'text',
-                'text' => 'ค่าอุณหภูมิ วันที่ 10/3/60 : ' . $temp1 . ' องศาเซลเซียส' . "\r\n" .
-                    'ค่าอุณหภูมิ วันที่ 11/3/60 : ' . $temp2 . ' องศาเซลเซียส' . "\r\n" .
-                    'ค่าอุณหภูมิ วันที่ 12/3/60 : ' . $temp3 . ' องศาเซลเซียส' . "\r\n" .
-                    'ค่าอุณหภูมิ วันที่ 13/3/60 : ' . $temp4 . ' องศาเซลเซียส' . "\r\n" .
-                    'ค่าอุณหภูมิ วันที่ 14/3/60 : ' . $temp5 . ' องศาเซลเซียส' . "\r\n"
-            ];
-            if($event['message']['text'] == "เหนื่อยไหม"){
-                $bufferMessage[0] = $message1;
-            }
-
 			// Build message to reply back
-			// $messages = [
-			// 	'type' => 'text',
-			// 	'text' => $text
-			// ];
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
