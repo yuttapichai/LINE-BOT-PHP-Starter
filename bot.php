@@ -21,7 +21,7 @@ if (!is_null($events['events'])) {
 					'text' => 'ผมไม่เข้าใจเลย'
 			];
 
-			if($text == 'สวัสดี'){
+			if($text == 'สวัสดี' || $text == 'hello' || $text == 'Hello'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
 				$ran_msg =rand(0,sizeof($msg)-1);
 				$messages = [
@@ -67,7 +67,29 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'ครับผม'
 				];
-			}			
+			}
+			if($text == 'มีแฟนยัง'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'เล่นถามแบบนี้ เขินสิครับ'
+				];
+			}
+			if($sub == 'cal'){
+				$qq = substr($text, -8);
+				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
+				$messages = [
+					    'type'=> 'image',
+						'originalContentUrl'=> $urlpic,
+						'previewImageUrl'=> $urlpic
+				];
+			}
+			if($text == 'น่ารัก'){
+			  "type": "sticker",
+			  "packageId": "2",
+			  "stickerId": "36"
+			}
+
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
