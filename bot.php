@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			if($event['message']['text'] == 'สวัสดี'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
 				$ran_msg =rand(0,2);
-				$messages[0] = [
+				$messages = [
 				{
 					'type' => 'text',
 					'text' => $msg[$ran_msg]
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages[0]],
+				'messages' => $messages,
 
 			];
 			$post = json_encode($data);
