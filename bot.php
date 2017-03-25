@@ -61,6 +61,12 @@ if (!is_null($events['events'])) {
 					'type' => 'text',
 					'text' => 'จ้ะ'
 				];
+			}
+			if($text == 'โอเค' || $text == 'เค' || $text == 'Ok' || $text == 'ok'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ครับผม'
+				];
 			}			
 
 			// Make a POST Request to Messaging API to reply to sender
