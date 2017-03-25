@@ -56,6 +56,12 @@ if (!is_null($events['events'])) {
 					'text' => 'ตอบคุณอยู่นี่ไง'
 				];
 			}
+			if($text == 'หรอ' || $text == 'เหรอ' || $text == 'หรา' || $text == 'เหรอะ'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'จ้ะ'
+				];
+			}			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
