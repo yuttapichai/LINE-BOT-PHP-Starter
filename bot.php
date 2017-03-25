@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$sendMsg = [];
 
-			if($text == 'hello'){
+			if($text == 'สวัสดี'){
 				// $msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
 				// $ran_msg =rand(0,2);
 				$messages = [
