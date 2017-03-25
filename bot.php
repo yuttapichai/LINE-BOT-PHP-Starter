@@ -15,21 +15,35 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$sendMsg = [];
+
+			if($event['message']['text'] == 'สวัสดี'){
+				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
+				$ran_msg =rand(0,2);
+				$messages[0] = [
+				{
+					'type' => 'text',
+					'text' => $msg[$ran_msg]
+				}
+				];
+			}
 
 			// Build message to reply back
-			$messages = [
-				{'type' => 'text',
-				'text' => $text },{
-				'type' => 'text',
-				'text' => 'QQQQQ'
-				}
-			];
+			// $messages = [
+			// 	{
+			// 		'type' => 'text',
+			// 		'text' => $text 
+			// 	},{
+			// 		'type' => 'text',
+			// 		'text' => 'QQQQQ'
+			// 	}
+			// ];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$messages[0]],
 
 			];
 			$post = json_encode($data);
