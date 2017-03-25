@@ -75,9 +75,11 @@ if (!is_null($events['events'])) {
 				];
 			}
 			if($text == 'น่ารัก'){
-			  'type' => 'sticker',
-			  'packageId'=> '2',
-			  'stickerId'=>'36'
+				$messages = [
+					  'type' => 'sticker',
+					  'packageId'=> '2',
+					  'stickerId'=>'36'
+			  	];
 			}
 
 
