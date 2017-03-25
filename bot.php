@@ -105,6 +105,13 @@ if (!is_null($events['events'])) {
 					'text' => 'ถึงผมเป็นบอท แต่ผมก็เสียใจเป็นนะครับ TT'
 			  	];
 			}
+			if($text == 'กวน'){
+				$messages = [
+					  'type' => 'sticker',
+					  'packageId'=> '2',
+					  'stickerId'=>'42'
+			  	];
+			}
 
 
 
