@@ -105,25 +105,6 @@ if (!is_null($events['events'])) {
 					'text' => 'ถึงผมเป็นบอท แต่ผมก็เสียใจเป็นนะครับ TT'
 			  	];
 			}
-			// if($text == 'ฝันดี'){
-			// 	$messages = [{
-			// 		  'type' => 'sticker',
-			// 		  'packageId'=> '2',
-			// 		  'stickerId'=>'46'
-			// 		},{
-			// 		'type' => 'text',
-			// 		'text' => 'ฝันถึงผมด้วยนะครับ'
-			// 		}
-			//   	];
-			// }
-			// if($text == 'บาย' || $text == 'ลาก่อน'){
-			// 	$messages = [
-			// 		  'type' => 'sticker',
-			// 		  'packageId'=> '2',
-			// 		  'stickerId'=>'42'
-					
-			//   	];
-			// }
 
 
 
