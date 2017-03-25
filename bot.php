@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			$sub = substr($text,'@',true);
 			$messages = [
 					'type' => 'text',
-					'text' => 'ผมไม่เข้าใจ'
+					'text' => $sub
 			];
 
 			if($text == 'สวัสดี'){
