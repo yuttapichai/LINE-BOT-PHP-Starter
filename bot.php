@@ -19,24 +19,20 @@ if (!is_null($events['events'])) {
 
 			if($text == 'สวัสดี'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
-				$ran_msg =rand(0,2);
+				$ran_msg =rand(0,sizeof($msg)-1);
 				$messages = [
 					'type' => 'text',
 					// 'text' => $msg[$ran_msg]
 					'text' => $msg[$ran_msg]
 				];
 			}
-
-			// Build message to reply back
-			// $messages = [
-			// 	{
-			// 		'type' => 'text',
-			// 		'text' => $text 
-			// 	},{
-			// 		'type' => 'text',
-			// 		'text' => 'QQQQQ'
-			// 	}
-			// ];
+			if($text == 'ชื่อ' || $text == 'ชื่อไร' || $text == 'ชื่อไรคับ' || $text == 'ชื่อไรคะ' || $text == 'ชื่อไรหรอ' || $text == 'ชื่ออะไร'){
+				$messages = [
+					'type' => 'text',
+					// 'text' => $msg[$ran_msg]
+					'text' => 'ผมชื่อมะพร้าวครับ'
+				];
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
