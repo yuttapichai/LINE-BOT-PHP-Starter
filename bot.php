@@ -40,16 +40,16 @@ if (!is_null($events['events'])) {
 					'text' => 'ไข่ทอด อิอิ'
 				];
 			}
-			if(strchr($text,'ภาพ')){
-				$sub = substr($text,3)
-				// $urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $sub;
-				$messages = [
-					    // "type"=> "image",
-    					// "originalContentUrl"=> $urlpic,
-    					// "previewImageUrl"=> $urlpic
-					'type' => 'text',
-					'text' => $text
-				];
+
+			$sub = substr($text,'@',true)
+			if($sub == 'pic'){
+				$qq = substr($text, -8);
+			$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
+			$messages = [
+				    "type"=> "image",
+					"originalContentUrl"=> $urlpic,
+					"previewImageUrl"=> $urlpic
+			];
 			}
 
 
