@@ -15,10 +15,10 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			$sub = substr($text,'@',true);
+			$sub = strstr($text,'@',true);
 			$messages = [
 					'type' => 'text',
-					'text' => $sub
+					'text' => 'ผมไม่เข้าใจเลย'
 			];
 
 			if($text == 'สวัสดี'){
