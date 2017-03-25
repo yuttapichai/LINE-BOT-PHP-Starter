@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 					'text' => $msg[$ran_msg]
 				];
 			}
-			if($text == 'ชื่อ' || $text == 'ชื่อไร' || $text == 'ชื่อไรคับ' || $text == 'ชื่อไรคะ' || $text == 'ชื่อไรหรอ' || $text == 'ชื่ออะไร'){
+			if($text == 'ชื่อ' || $text == 'ชื่อไร'||$text == 'บอท' || $text == 'ชื่อไรคับ' || $text == 'ชื่อไรคะ' || $text == 'ชื่อไรหรอ' || $text == 'ชื่ออะไร'){
 				$messages = [
 					'type' => 'text',
 					'text' => 'ผมชื่อมะพร้าวครับ'
@@ -80,11 +80,29 @@ if (!is_null($events['events'])) {
 					'text' => 'ถามแบบนี้ส่งเบอร์มาเลยดีกว่า ^^'
 				];
 			}
+			if($text == 'พูดได้กี่ภาษา'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ภาษาเดียวให้รอดก่อนครับ'
+				];
+			}
 			if($text == 'น่ารัก'){
 				$messages = [
 					  'type' => 'sticker',
 					  'packageId'=> '2',
 					  'stickerId'=>'36'
+			  	];
+			}
+			if($text == 'มะพร้าว'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'มีอะไรให้รับใช้ครับ'
+			  	];
+			}
+			if($text == 'กวน'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ถึงผมเป็นบอท แต่ผมก็เสียใจเป็นนะครับ TT'
 			  	];
 			}
 
