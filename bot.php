@@ -105,11 +105,23 @@ if (!is_null($events['events'])) {
 					'text' => 'ถึงผมเป็นบอท แต่ผมก็เสียใจเป็นนะครับ TT'
 			  	];
 			}
-			if($text == 'กวน'){
+			if($text == 'บาย'){
 				$messages = [
 					  'type' => 'sticker',
 					  'packageId'=> '2',
 					  'stickerId'=>'42'
+			  	];
+			}
+			if($text == 'ฝันดี'){
+				$messages = [{
+					  'type' => 'sticker',
+					  'packageId'=> '2',
+					  'stickerId'=>'46'
+					},
+					{
+					'type' => 'text',
+					'text' => 'ฝันถึงมะพร้าวด้วยนะ อิอิ'
+					}
 			  	];
 			}
 
