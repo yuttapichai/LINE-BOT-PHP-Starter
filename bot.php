@@ -236,6 +236,12 @@ if (!is_null($events['events'])) {
 					'text' => 'สู้ๆน้า'
 			  	];
 			}
+			if($text == 'โตขึ้นอยากเป็นอะไร'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'อยากเป็นคนจังเลย'
+			  	];
+			}
 
 
 
