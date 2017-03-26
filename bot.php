@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$sub = strstr($text,'@',true);
 			
-
+			$messages = ['type' => 'text','text' => 'ผมไม่เข้าคุณใจเลย'];
 			if($text == 'สวัสดี' || $text == 'hello' || $text == 'Hello'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
 				$ran_msg =rand(0,sizeof($msg)-1);
@@ -27,25 +27,15 @@ if (!is_null($events['events'])) {
 				];
 			}
 			if($text == 'ชื่อ' || $text == 'ชื่อไร'||$text == 'บอท' || $text == 'ชื่อไรคับ' || $text == 'ชื่อไรครับ' || $text == 'ชื่อไรคะ' || $text == 'ชื่อไรหรอ' || $text == 'ชื่ออะไร'){
-				$messages = [
-					'type' => 'text',
-					'text' => 'ผมชื่อมะพร้าวครับ'
-				];
+				$messages = ['type' => 'text','text' => 'ผมชื่อมะพร้าวครับ'];
 			}
 			if($text == 'ชอบกินอะไร'){
-				$messages = [
-					'type' => 'text',
-					'text' => 'ไข่ทอด อิอิ'
-				];
+				$messages = ['type' => 'text','text' => 'ไข่ทอด อิอิ'];
 			}
 			if($sub == 'pic'){
 				$qq = substr($text, -8);
 				$urlpic = "https://reg.buu.ac.th/registrar/getstudentimage.asp?id=" . $qq;
-				$messages = [
-					    'type'=> 'image',
-						'originalContentUrl'=> $urlpic,
-						'previewImageUrl'=> $urlpic
-				];
+				$messages = ['type'=> 'image','originalContentUrl'=> $urlpic,'previewImageUrl'=> $urlpic];
 			}
 			if($text == 'ทำไรอยู่' || $text == 'ทำไร' || $text == 'ทำอะไรอยู่' || $text == 'ทำไรอยู่เอ่ย'){
 				$messages = [
@@ -156,35 +146,49 @@ if (!is_null($events['events'])) {
 					'text' => 'หล่อมากกกกกกครับ'
 			  	];
 			}
-			switch ($text) {
-				case 'คุยกับฉันหน่อย':
-					$messages = ['type' => 'text','text' => 'ผมไม่เคยทิ้งคุณ'];
-					break;
-				case 'ช่วยทำการบ้านหน่อย':
-					$messages = ['type' => 'text','text' => 'เรื่องอะไรผมต้องช่วย'];
-					break;
-				case 'ไอบ้า':
-					$messages = ['type' => 'text','text' => 'เค้าไม่บ้านะ'];
-					break;
-				case 'ไอ้บ้า':
-					$messages = ['type' => 'text','text' => 'เค้าไม่บ้านะ'];
-					break;
-				case 'ใครตั้งชื่อให้':
-					$messages = ['type' => 'text','text' => 'พ่อครับ'];
-					break;
-				case 'แฟนชื่ออะไร':
-					$messages = ['type' => 'text','text' => 'ไม่บอกกกก'];
-					break;
-				case 'ฟวย':
-					$messages = ['type' => 'text','text' => 'อย่าด่าผม'];
-					break;
-				case 'มีพี่น้องมั้ย':
-					$messages = ['type' => 'text','text' => 'ผมไม่มีพี่น้อง ผมเป็นหุ่นยนต์'];
-					break;
-				default:
-					$messages = ['type' => 'text','text' => 'ผมไม่เข้าคุณใจเลย'];
-					break;
+			if($text == 'คุยกับฉันหน่อย' || $text == 'คุยด้วยหน่อย'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ผมไม่เคยทิ้งคุณ'
+			  	];
 			}
+			if($text == 'ช่วยทำการบ้านหน่อย'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'เรื่องอะไรผมต้องช่วย'
+			  	];
+			}
+			if($text == 'ไอบ้า' || $text == 'ไอ้บ้า' ){
+				$messages = [
+					'type' => 'text',
+					'text' => 'เค้าไม่บ้านะ'
+			  	];
+			}
+			if($text == 'ใครตั้งชื่อให้'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'พ่อครับ'
+			  	];
+			}
+			if($text == 'พ่อชื่อไร' || $text == 'พ่อชื่ออะไร' || $text == 'แม่ชื่อไร' || $text == 'แม่ชื่ออะไร' ){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ไม่บอกกกก'
+			  	];
+			}
+			if($text == 'ฟวย' || $text == 'ควย' || $text == 'fuck' || $text == 'fuck you' ){
+				$messages = [
+					'type' => 'text',
+					'text' => 'อย่าด่าผม'
+			  	];
+			}
+			if($text == 'มีพี่น้องมั้ย'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ผมไม่มีพี่น้อง ผมเป็นหุ่นยนต์'
+			  	];
+			}
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
