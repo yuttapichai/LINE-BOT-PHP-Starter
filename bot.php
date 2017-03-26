@@ -16,10 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$sub = strstr($text,'@',true);
-			$messages = [
-					'type' => 'text',
-					'text' => 'ผมไม่เข้าใจเลย'
-			];
+			
 
 			if($text == 'สวัสดี' || $text == 'hello' || $text == 'Hello'){
 				$msg = array("สวัสดีจ้า","Hello","จ้า สวัสดีจ้า");
@@ -80,7 +77,7 @@ if (!is_null($events['events'])) {
 					'text' => 'ถามแบบนี้ส่งเบอร์มาเลยดีกว่า ^^'
 				];
 			}
-			if($text == 'พูดได้กี่ภาษา'){
+			if($text == 'พูดได้กี่ภาษา' || $text == 'พูดภาษาอื่นเป็นมั้ย' ){
 				$messages = [
 					'type' => 'text',
 					'text' => 'ภาษาเดียวให้รอดก่อนครับ'
@@ -119,8 +116,75 @@ if (!is_null($events['events'])) {
 					  'stickerId'=>'46'
 			  	];
 			}
-
-
+			if($text == 'ไม่สบายทำไงดี' || $text == 'ป่วยทำไงดี'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'กินยาแล้วนอนพักเยอะๆนะครับ'
+			  	];
+			}
+			if($text == '555' || $text == 'ฮ่าๆ'){
+				$msg = array("555","ตลกมากเหรอ","แหะๆ");
+				$ran_msg =rand(0,sizeof($msg)-1);
+				$messages = [
+					'type' => 'text',
+					'text' => $msg[$ran_msg]
+				];
+			}
+			if($text == 'อยู่ไหน'){
+				$msg = array("ในใจเสมอ","แถวนี้แหละ","บางแสน","ทำไมต้องบอก");
+				$ran_msg =rand(0,sizeof($msg)-1);
+				$messages = [
+					'type' => 'text',
+					'text' => $msg[$ran_msg]
+				];
+			}
+			if($text == 'เกิดวันไหน' || $text == 'วันเกิด' || $text == 'เกิดวันอะไร'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ผมชื่อมะพร้าว เกิดวันที่ 26 มีนาคม 2560 ครับ'
+			  	];
+			}
+			if($text == 'เราสวยมั้ย' || $text == 'เราสวยไหม' || $text == 'สวยมั้ย' || $text == 'สวยไหม'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'สวยมากครับ ^^'
+			  	];
+			}
+			if($text == 'เราหล่อมั้ย' || $text == 'เราหล่อไหม' || $text == 'หล่อมั้ย' || $text == 'หล่อไหม'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'หล่อมากกกกกกครับ'
+			  	];
+			}
+			switch ($text) {
+				case 'คุยกับฉันหน่อย':
+					$messages = ['type' => 'text','text' => 'ผมไม่เคยทิ้งคุณ'];
+					break;
+				case 'ช่วยทำการบ้านหน่อย':
+					$messages = ['type' => 'text','text' => 'เรื่องอะไรผมต้องช่วย'];
+					break;
+				case 'ไอบ้า':
+					$messages = ['type' => 'text','text' => 'เค้าไม่บ้านะ'];
+					break;
+				case 'ไอ้บ้า':
+					$messages = ['type' => 'text','text' => 'เค้าไม่บ้านะ'];
+					break;
+				case 'ใครตั้งชื่อให้':
+					$messages = ['type' => 'text','text' => 'พ่อครับ'];
+					break;
+				case 'แฟนชื่ออะไร':
+					$messages = ['type' => 'text','text' => 'ไม่บอกกกก'];
+					break;
+				case 'ฟวย':
+					$messages = ['type' => 'text','text' => 'อย่าด่าผม'];
+					break;
+				case 'มีพี่น้องมั้ย':
+					$messages = ['type' => 'text','text' => 'ผมไม่มีพี่น้อง ผมเป็นหุ่นยนต์'];
+					break;
+				default:
+					$messages = ['type' => 'text','text' => 'ผมไม่เข้าคุณใจเลย'];
+					break;
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
