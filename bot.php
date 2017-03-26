@@ -112,7 +112,7 @@ if (!is_null($events['events'])) {
 					'text' => 'กินยาแล้วนอนพักเยอะๆนะครับ'
 			  	];
 			}
-			if($text == '555' || $text == 'ฮ่าๆ'){
+			if($text == '555' || $text == 'ฮ่าๆ' || $text == 'ฮ่าๆๆ' || $text == 'ฮ่าๆๆๆ' || $text == '5555555' || $text == '55' || $text == '5555' || $text == '55555'){
 				$msg = array("555","ตลกมากเหรอ","แหะๆ");
 				$ran_msg =rand(0,sizeof($msg)-1);
 				$messages = [
@@ -200,6 +200,25 @@ if (!is_null($events['events'])) {
 					'text' => 'นอนเลยครับ พักผ่อนเยอะๆ ผมยังไม่ง่วง'
 			  	];
 			}
+			if($text == 'กินไรยัง' || $text == 'กินข้าวยัง'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ผมไม่กิน ลดหุ่น'
+			  	];
+			}
+			if($text == 'กินข้าว' || $text == 'กินข้าวกัน'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ป้อนผมหน่อย'
+			  	];
+			}
+			if($text == 'อร่อยมั้ย' || $text == 'หร่อยป่ะ' || $text == 'หร่อยป่าว' || $text == 'อร่อยป่ะ' || $text == 'อร่อยป่าว'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ไม่เห็นมีรสชาติเลยยยยย'
+			  	];
+			}
+
 
 
 			// Make a POST Request to Messaging API to reply to sender
