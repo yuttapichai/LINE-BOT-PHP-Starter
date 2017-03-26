@@ -155,7 +155,7 @@ if (!is_null($events['events'])) {
 					'text' => 'เรื่องอะไรผมต้องช่วย'
 			  	];
 			}
-			if($text == 'ไอบ้า' || $text == 'ไอ้บ้า' ){
+			if($text == 'ไอบ้า' || $text == 'ไอ้บ้า' || $text == 'บ้า' ){
 				$messages = [
 					'type' => 'text',
 					'text' => 'เค้าไม่บ้านะ'
