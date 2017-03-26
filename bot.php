@@ -188,6 +188,18 @@ if (!is_null($events['events'])) {
 					'text' => 'ผมไม่มีพี่น้อง ผมเป็นหุ่นยนต์'
 			  	];
 			}
+			if($text == 'ทำไม' || $text == 'อยากมีเรื่องเหรอ'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'ป่าวครับ'
+			  	];
+			}
+			if($text == 'ง่วงยัง' || $text == 'ง่วง'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'นอนเลยครับ พักผ่อนเยอะๆ ผมยังไม่ง่วง'
+			  	];
+			}
 
 
 			// Make a POST Request to Messaging API to reply to sender
